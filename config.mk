@@ -1,5 +1,5 @@
 #Project name and version
-PROJ = libimproctools
+PROJ = improctools
 VERSION = 0.0.1
 
 # The path where application will be installed

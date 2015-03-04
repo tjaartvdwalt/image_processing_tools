@@ -11,7 +11,7 @@ all: options install
 	@${CC} -c ${CFLAGS} $<
 
 
-${PROJ}.so:${OBJ}
+lib${PROJ}.so:${OBJ}
 	@echo CC -o $@ ${OBJ} ${LDFLAGS}
 	@${CC} -o $@ ${OBJ} ${LDFLAGS}
 
@@ -29,11 +29,11 @@ dist: clean
 	@gzip ${PROJ}-${VERSION}.tar
 	@rm -rf ${PROJ}-${VERSION}
 
-install: ${PROJ}.so
+install: lib${PROJ}.so
 	@echo installing executable files to ${DESTDIR}${PREFIX}/${PROJ}
 	@mkdir -p ${DESTDIR}${PREFIX}/${PROJ}
-	@mv -f ${PROJ}.so ${DESTDIR}${PREFIX}/${PROJ}
-	@chmod 755 ${DESTDIR}${PREFIX}/${PROJ}/${PROJ}.so
+	@mv -f lib${PROJ}.so ${DESTDIR}${PREFIX}/${PROJ}
+	@chmod 755 ${DESTDIR}${PREFIX}/${PROJ}/lib${PROJ}.so
 	@echo installing header files to ${DESTDIR}${H_PREFIX}/${PROJ}
 	@mkdir -p ${DESTDIR}${H_PREFIX}/${PROJ}/
 	@cd src; cp  *.hpp ${DESTDIR}${H_PREFIX}/${PROJ}/

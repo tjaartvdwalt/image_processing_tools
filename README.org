@@ -18,8 +18,8 @@ make install
 *** Using in your own code
 To use this library in your own code you need to include the appropriate header files in your code.
 #+begin_src c++
-#include <libimproctools/image.hpp>
-#include <libimproctools/colorspace.hpp>
+#include <improctools/image.hpp>
+#include <improctools/colorspace.hpp>
 #+end_src
 
 Note that per default these header files are installed at =/usr/local/include/= so you 
@@ -36,3 +36,4 @@ You may not need all the opencv libraries, depending on what features you wish t
 ** Documentation
 Currently there is not complete API documentation. The function and parameter names are pretty self explanatory.
 For the moment the best way to resolve issues is to read the source. 
+
