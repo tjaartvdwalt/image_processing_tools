@@ -22,7 +22,7 @@ To use this library in your own code you need to include the appropriate header 
 #include <improctools/colorspace.hpp>
 #+end_src
 
-Note that per default these header files are installed at =/usr/local/include/= so you 
+*Note:* per default these header files are installed at =/usr/local/include/= so you 
 need to make sure the compiler can access headers at this location, or change the installation directory to =/usr/include=
 instead.
 
@@ -30,6 +30,9 @@ To compile your code with the shared library:
 #+begin_src sh
 g++ my_program.cpp -l improctools -l opencv_core -l opencv_core -l opencv_imgproc
 #+end_src
+
+*Note:* Similarly to before the library gets installed to =/usr/local/include/=. You need to make sure 
+that the loader will search in this location . 
 
 You may not need all the opencv libraries, depending on what features you wish to use.
  
