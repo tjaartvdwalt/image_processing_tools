@@ -1,0 +1,38 @@
+* Image processing tools
+These are a few tools I have written as part of the course [[http://www.cs.umsl.edu/~sanjiv/classes/cs5420/][CS5420]] in image processing.
+It uses the [[http://opencv.org/][OpenCV]] library. OpenCV probably has more efficient implementations for many
+of these functions, but this is my attempt to learn the fundamentals.
+
+** Installation
+*** Prerequisites
+- You will need to have OpenCV (2.4 or greater) [[http://opencv.org/downloads.html][installed]]. Doing so is beyond the scope of this document.
+- You will also need a C++ compiler (preferably G++) installed.
+- You need =make= installed 
+
+*** Installing
+To install simply run:
+#+begin_src sh
+make install 
+#+end_src
+ 
+*** Using in your own code
+To use this library in your own code you need to include the appropriate header files in your code.
+#+begin_src c++
+#include <libimproctools/image.hpp>
+#include <libimproctools/colorspace.hpp>
+#+end_src
+
+Note that per default these header files are installed at =/usr/local/include/= so you 
+need to make sure the compiler can access headers at this location, or change the installation directory to =/usr/include=
+instead.
+
+To compile your code with the shared library:
+#+begin_src sh
+g++ my_program.cpp -l improctools -l opencv_core -l opencv_core -l opencv_imgproc
+#+end_src
+
+You may not need all the opencv libraries, depending on what features you wish to use.
+ 
+** Documentation
+Currently there is not complete API documentation. The function and parameter names are pretty self explanatory.
+For the moment the best way to resolve issues is to read the source. 
